@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Budget_TrackerApp: App {
+struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePageView()
         }
     }
 }
