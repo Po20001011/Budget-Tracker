@@ -11,10 +11,10 @@ struct HomePageView: View {
     @State private var showHistoryView: Bool = false
     
     @State private var transactions: [Transaction] = [
-        Transaction(date: "08/08/2023", description: "Salary", amount: 1500.0, type: .income),
-        Transaction(date: "08/07/2023", description: "Groceries", amount: -75.35, type: .expense),
+        Transaction(date: "08/08/2023", description: "Salary", amount: 2000.0, type: .income),
+        Transaction(date: "08/07/2023", description: "Groceries", amount: -75.17, type: .expense),
         Transaction(date: "08/06/2023", description: "Bonus", amount: 300.0, type: .income),
-        Transaction(date: "08/05/2023", description: "Rent", amount: -800.0, type: .expense),
+        Transaction(date: "08/05/2023", description: "Rent", amount: -803.0, type: .expense),
         
     ]
     
