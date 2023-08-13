@@ -9,6 +9,7 @@ struct HomePageView: View {
     var currentBalance: Double = 5321.45
     @State private var showAddFundsView: Bool = false
     @State private var showHistoryView: Bool = false
+    @State private var showGraphView: Bool = false
     
     @State private var transactions: [Transaction] = [
         Transaction(date: "08/08/2023", description: "Salary", amount: 2000.0, type: .income),
@@ -50,9 +51,9 @@ struct HomePageView: View {
                         ForEach(transactions) { transaction in
                             HStack {
                                 Text(transaction.type == .income ? "+" : "-") // Changed to display plus or minus
-                                            .font(.headline)
-                                            .foregroundColor(transaction.type == .income ? .green : .red)
-                                    
+                                    .font(.headline)
+                                    .foregroundColor(transaction.type == .income ? .green : .red)
+                                
                                 VStack(alignment: .leading) {
                                     Text(transaction.description)
                                         .font(.headline)
@@ -97,23 +98,28 @@ struct HomePageView: View {
                     Image(systemName: "clock.fill")
                     Text("History")
                 } .sheet(isPresented: $showHistoryView) {
-                    HistoryView(transactions: transactions) // Add this line
+                    HistoryView(transactions: transactions)
                 }
                 Spacer()
-                Button(action: {}) {
-                    Image(systemName: "chart.bar.fill")
+                Button(action: {
+                    showGraphView.toggle()
+                }) {
+                    Image(systemName: "chart.pie.fill")
                     Text("Graph")
-                }
-                Spacer()
-                Button(action: {}) {
-                    Image(systemName: "gearshape.fill")
-                    Text("Setting")
-                }
+                } .sheet(isPresented: $showGraphView) {
+                GraphView()
             }
-            .padding()
-            .background(Color(.systemBackground))
+            
+            Spacer()
+            Button(action: {}) {
+                Image(systemName: "gearshape.fill")
+                Text("Setting")
+            }
         }
+        .padding()
+        .background(Color(.systemBackground))
     }
+}
 }
 
 
