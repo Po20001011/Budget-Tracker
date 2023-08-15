@@ -10,13 +10,13 @@ struct HomePageView: View {
     @State private var showAddFundsView: Bool = false
     @State private var showHistoryView: Bool = false
     @State private var showGraphView: Bool = false
+    @State private var showSettingsView: Bool = false
     
     @State private var transactions: [Transaction] = [
         Transaction(date: "08/08/2023", description: "Salary", amount: 2000.0, type: .income),
         Transaction(date: "08/07/2023", description: "Groceries", amount: -75.00, type: .expense),
         Transaction(date: "08/06/2023", description: "Bonus", amount: 300.0, type: .income),
         Transaction(date: "08/05/2023", description: "Rent", amount: -800.0, type: .expense),
-        
     ]
     
     var body: some View {
@@ -50,7 +50,7 @@ struct HomePageView: View {
                         
                         ForEach(transactions) { transaction in
                             HStack {
-                                Text(transaction.type == .income ? "+" : "-") // Changed to display plus or minus
+                                Text(transaction.type == .income ? "+" : "-") // To display plus or minus
                                     .font(.headline)
                                     .foregroundColor(transaction.type == .income ? .green : .red)
                                 
@@ -111,9 +111,14 @@ struct HomePageView: View {
             }
             
             Spacer()
-            Button(action: {}) {
+            Button(action: {
+                showSettingsView.toggle()
+            }) {
                 Image(systemName: "gearshape.fill")
                 Text("Setting")
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
             }
         }
         .padding()

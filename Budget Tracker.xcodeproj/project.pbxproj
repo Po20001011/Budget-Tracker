@@ -15,6 +15,7 @@
 		CDC8D4E72A8505A6000E92F1 /* AddFunds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */; };
 		CDC8D4E92A8505E6000E92F1 /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */; };
 		CDC8D4EB2A88E576000E92F1 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4EA2A88E576000E92F1 /* GraphView.swift */; };
+		CDC8D55D2A8B3B09000E92F1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFunds.swift; sourceTree = "<group>"; };
 		CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPage.swift; sourceTree = "<group>"; };
 		CDC8D4EA2A88E576000E92F1 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 		CDC8D4C82A8504F6000E92F1 = {
 			isa = PBXGroup;
 			children = (
+				CDC8D5592A8B3656000E92F1 /* Models */,
 				CDC8D4D32A8504F6000E92F1 /* Budget Tracker */,
 				CDC8D4D22A8504F6000E92F1 /* Products */,
 			);
@@ -59,12 +62,12 @@
 		CDC8D4D32A8504F6000E92F1 /* Budget Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				CDC8D4EA2A88E576000E92F1 /* GraphView.swift */,
-				CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */,
 				CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */,
-				CDC8D4E42A850585000E92F1 /* Transaction.swift */,
 				CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */,
 				CDC8D4D62A8504F6000E92F1 /* ContentView.swift */,
+				CDC8D4EA2A88E576000E92F1 /* GraphView.swift */,
+				CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */,
+				CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */,
 				CDC8D4D82A8504F9000E92F1 /* Assets.xcassets */,
 				CDC8D4DA2A8504F9000E92F1 /* Preview Content */,
 			);
@@ -77,6 +80,14 @@
 				CDC8D4DB2A8504F9000E92F1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDC8D5592A8B3656000E92F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDC8D4E42A850585000E92F1 /* Transaction.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				CDC8D4D72A8504F6000E92F1 /* ContentView.swift in Sources */,
 				CDC8D4D52A8504F6000E92F1 /* Budget_TrackerApp.swift in Sources */,
 				CDC8D4E92A8505E6000E92F1 /* HistoryPage.swift in Sources */,
+				CDC8D55D2A8B3B09000E92F1 /* SettingView.swift in Sources */,
 				CDC8D4E72A8505A6000E92F1 /* AddFunds.swift in Sources */,
 				CDC8D4E52A850585000E92F1 /* Transaction.swift in Sources */,
 				CDC8D4EB2A88E576000E92F1 /* GraphView.swift in Sources */,

@@ -10,6 +10,7 @@ struct GraphView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedMonth = "January"
     
+    // Data for the graph view
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let income: Double = 800
     let expense: Double = 800
@@ -70,7 +71,7 @@ struct GraphView: View {
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }
-                            .frame(width: 150, height: 150) // Bigger inner circle
+                            .frame(width: 150, height: 150)
                             .background(Color.white)
                             .cornerRadius(75)
                         }
@@ -80,7 +81,7 @@ struct GraphView: View {
                 }
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-            .navigationBarItems(leading: Button(action: { // Add this block
+            .navigationBarItems(leading: Button(action: {
                            presentationMode.wrappedValue.dismiss()
                        }) {
                            Image(systemName: "arrow.left")
@@ -90,6 +91,7 @@ struct GraphView: View {
     }
 }
 
+// Custom view for the summary cards
 struct SummaryCard: View {
     var title: String
     var value: String
@@ -108,7 +110,7 @@ struct SummaryCard: View {
         .shadow(radius: 5)
     }
 }
-
+// Custom view for the pie chart
 struct PieChartView: View {
     var value: Double
     var color: Color
