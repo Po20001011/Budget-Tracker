@@ -11,7 +11,8 @@ import SwiftUI
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePageView()
+           AppTabView()
+                .preferredColorScheme(.light)
         }
     }
 }

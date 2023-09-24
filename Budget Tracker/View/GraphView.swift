@@ -5,44 +5,55 @@
 //  Created by Wang Po on 13/8/2023.
 //
 import SwiftUI
-
+/// `GraphView` displays a fincnail overview in the form of graphs and summary card
+//  I didn't do the month when we add the income or expense, we can implement this feature later on
 struct GraphView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var selectedMonth = "January"
-    
+   
+    @EnvironmentObject var vm:TransactionViewModel
     // Data for the graph view
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    let income: Double = 800
-    let expense: Double = 800
-    var balance: Double { income - expense } // Calculating balance dynamically
+
+  
+    var transactions:[TransactionModel] {
+        return vm.monthlyTransaction
+    }
+    /// Calculated total income for the selected month
+    var income:Double {
+        return transactions.filter({ $0.isIncome }).map({$0.amount}).reduce(0, +)
+    }
+    
+    var expense:Double {
+        return transactions.filter({ !$0.isIncome }).map({$0.amount}).reduce(0, +)
+    }
     
     var body: some View {
-        NavigationView {
+
             ScrollView {
                 VStack {
                     // Title
                     Text("Financial Overview")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding()
-                    
+
+
                     // Month Picker
                     VStack {
                         Text("Select Month")
                             .font(.headline)
-                        Picker("Select Month", selection: $selectedMonth) {
+                        Picker("Select Month", selection: $vm.selectedMonth) {
                             ForEach(months, id: \.self) { month in
                                 Text(month).tag(month)
                             }
                         }
                         .pickerStyle(MenuPickerStyle())
-                        .padding()
+                        .frame(width: 180,height: 60)
                         .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 5)
                     }
                     .padding()
-                    
+                   
                     // Summary Cards
                     HStack {
                         SummaryCard(title: "Total Income", value: String(format: "$%.2f", income))
@@ -67,7 +78,7 @@ struct GraphView: View {
                             VStack {
                                 Text("Balance")
                                     .font(.headline)
-                                Text(String(format: "$%.2f", balance))
+                                Text(String(format: "$%.2f", income - expense))
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }
@@ -79,15 +90,20 @@ struct GraphView: View {
                     }
                     .padding()
                 }
+//            }
+                
+           
+            .toolbar { // Updated to customize navigation bar title
+                ToolbarItem(placement: .principal) {
+                    Text("Graph")
+                        .font(.title) // Increased font size
+                        .fontWeight(.bold)
+                }
+                
+                
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-            .navigationBarItems(leading: Button(action: {
-                           presentationMode.wrappedValue.dismiss()
-                       }) {
-                           Image(systemName: "arrow.left")
-                               .foregroundColor(.white)
-                       })
         }
+            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -131,6 +147,7 @@ struct PieChartView: View {
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView()
+        GraphView().environmentObject(TransactionViewModel())
     }
 }
+
