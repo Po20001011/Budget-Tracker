@@ -25,7 +25,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            navigationBar
+
             userInfoSection
             generalSettingsSection
             notificationSettingsSection
@@ -34,6 +34,15 @@ struct SettingsView: View {
         }
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .toolbar { // Updated to customize navigation bar title
+            ToolbarItem(placement: .principal) {
+                Text("Settings")
+                    .font(.title) // Increased font size
+                    .fontWeight(.bold)
+            }
+            
+            
+        }
     }
     
     // MARK: - Navigation Bar
@@ -171,4 +180,5 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
+
 

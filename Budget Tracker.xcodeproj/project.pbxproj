@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4AA2072ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2052ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld */; };
+		CD4AA20B2ABDB474004A3203 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA20A2ABDB474004A3203 /* TransactionViewModel.swift */; };
+		CD4AA20E2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA20D2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift */; };
+		CD4AA2122ABDB6DB004A3203 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2112ABDB6DB004A3203 /* CoreDataStack.swift */; };
+		CD4AA2142ABDB6F9004A3203 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2132ABDB6F9004A3203 /* CoreDataManager.swift */; };
+		CD4AA2162ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2152ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift */; };
+		CD4AA2182ABDB9CA004A3203 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */; };
+		CD4AA21A2ABDBCF7004A3203 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */; };
 		CDC8D4D52A8504F6000E92F1 /* Budget_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */; };
 		CDC8D4D72A8504F6000E92F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D62A8504F6000E92F1 /* ContentView.swift */; };
 		CDC8D4D92A8504F9000E92F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC8D4D82A8504F9000E92F1 /* Assets.xcassets */; };
@@ -19,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD4AA2062ABDB299004A3203 /* BudgetTrackerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetTrackerModel.xcdatamodel; sourceTree = "<group>"; };
+		CD4AA20A2ABDB474004A3203 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		CD4AA20D2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CD4AA2112ABDB6DB004A3203 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CD4AA2132ABDB6F9004A3203 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CD4AA2152ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		CDC8D4D12A8504F6000E92F1 /* Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget_TrackerApp.swift; sourceTree = "<group>"; };
 		CDC8D4D62A8504F6000E92F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +58,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD4AA2082ABDB3E1004A3203 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */,
+				CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */,
+				CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */,
+				CDC8D4D62A8504F6000E92F1 /* ContentView.swift */,
+				CDC8D4EA2A88E576000E92F1 /* GraphView.swift */,
+				CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */,
+				CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */,
+				CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */,
+				CD4AA20C2ABDB60D004A3203 /* CoreData */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD4AA2092ABDB40A004A3203 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD4AA20A2ABDB474004A3203 /* TransactionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD4AA20C2ABDB60D004A3203 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CD4AA20F2ABDB655004A3203 /* Model */,
+				CD4AA2102ABDB6C0004A3203 /* Manager */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CD4AA20F2ABDB655004A3203 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD4AA20D2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift */,
+				CD4AA2152ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD4AA2102ABDB6C0004A3203 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CD4AA2112ABDB6DB004A3203 /* CoreDataStack.swift */,
+				CD4AA2132ABDB6F9004A3203 /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		CDC8D4C82A8504F6000E92F1 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +129,9 @@
 		CDC8D4D32A8504F6000E92F1 /* Budget Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */,
-				CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */,
-				CDC8D4D62A8504F6000E92F1 /* ContentView.swift */,
-				CDC8D4EA2A88E576000E92F1 /* GraphView.swift */,
-				CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */,
-				CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */,
+				CD4AA2092ABDB40A004A3203 /* ViewModel */,
+				CD4AA2082ABDB3E1004A3203 /* View */,
+				CD4AA2052ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld */,
 				CDC8D4D82A8504F9000E92F1 /* Assets.xcassets */,
 				CDC8D4DA2A8504F9000E92F1 /* Preview Content */,
 			);
@@ -160,13 +224,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4AA21A2ABDBCF7004A3203 /* TransactionRow.swift in Sources */,
 				CDC8D4D72A8504F6000E92F1 /* ContentView.swift in Sources */,
 				CDC8D4D52A8504F6000E92F1 /* Budget_TrackerApp.swift in Sources */,
+				CD4AA20B2ABDB474004A3203 /* TransactionViewModel.swift in Sources */,
 				CDC8D4E92A8505E6000E92F1 /* HistoryPage.swift in Sources */,
+				CD4AA2182ABDB9CA004A3203 /* AppTabView.swift in Sources */,
 				CDC8D55D2A8B3B09000E92F1 /* SettingView.swift in Sources */,
 				CDC8D4E72A8505A6000E92F1 /* AddFunds.swift in Sources */,
+				CD4AA2142ABDB6F9004A3203 /* CoreDataManager.swift in Sources */,
+				CD4AA2122ABDB6DB004A3203 /* CoreDataStack.swift in Sources */,
+				CD4AA2162ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift in Sources */,
 				CDC8D4E52A850585000E92F1 /* Transaction.swift in Sources */,
 				CDC8D4EB2A88E576000E92F1 /* GraphView.swift in Sources */,
+				CD4AA20E2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift in Sources */,
+				CD4AA2072ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD4AA2052ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD4AA2062ABDB299004A3203 /* BudgetTrackerModel.xcdatamodel */,
+			);
+			currentVersion = CD4AA2062ABDB299004A3203 /* BudgetTrackerModel.xcdatamodel */;
+			path = BudgetTrackerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CDC8D4C92A8504F6000E92F1 /* Project object */;
 }
