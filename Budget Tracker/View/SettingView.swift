@@ -9,19 +9,32 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var networkManager = NetworkManager()
+    @State private var amount: String = ""
+    @State private var pickerSelection: Int = 0
+    
     @State private var notificationsEnabled = false
     @State private var selectedLanguage = "English"
-    @State private var selectedCurrency = "USD"
+//    @State private var selectedCurrency = "USD"
     @State private var selectedDateFormat = "MM/dd/yyyy"
     @State private var selectedStartOfWeek = "Sunday"
     @State private var selectedBudgetReset = "Monthly"
     @State private var showEmail: Bool = false
     
     let languages = ["English", "Spanish", "French", "German", "Chinese"]
-    let currencies = ["USD", "EUR", "GBP", "JPY", "CNY"]
+//    let currencies = ["USD", "EUR", "GBP", "JPY", "CNY"]
     let dateFormats = ["MM/dd/yyyy", "dd/MM/yyyy", "yyyy-MM-dd"]
     let startOfWeekOptions = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let budgetResetOptions = ["Weekly", "Monthly", "Yearly"]
+    
+    var total: Double {
+        guard networkManager.exchangePrice.count > 0 else { return 0 }
+        let buyingPrice = networkManager.exchangePrice[pickerSelection]
+        let doubleAmount = Double(amount) ?? 0.0
+        let totalAmount = buyingPrice * doubleAmount
+        return totalAmount
+    }
     
     var body: some View {
         VStack(spacing: 20) {
@@ -87,18 +100,47 @@ struct SettingsView: View {
                 .padding(.leading)
             
             Form {
+                
                 Section {
+                    
+                    HStack {
+                        
+                        Text("Currency Converter")
+                        Spacer()
+                        
+                        Picker("", selection: $pickerSelection) {
+                            ForEach(0..<networkManager.currencyCode.count, id: \.self) { index in
+                                let currency = networkManager.currencyCode[index]
+                                Text(currency)
+                            }
+                        }
+                        
+                        .id(UUID())
+                        .labelsHidden()
+                        
+                    }
+                    
+                    HStack {
+                        
+                        TextField("Amount", text: $amount)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.decimalPad)
+
+                        Text("\(total, specifier: "%.2f")")
+
+                    }
+                    
                     Picker("Language", selection: $selectedLanguage) {
                         ForEach(languages, id: \.self) { language in
                             Text(language)
                         }
                     }
                     
-                    Picker("Currency", selection: $selectedCurrency) {
-                        ForEach(currencies, id: \.self) { currency in
-                            Text(currency)
-                        }
-                    }
+//                    Picker("Currency", selection: $selectedCurrency) {
+//                        ForEach(currencies, id: \.self) { currency in
+//                            Text(currency)
+//                        }
+//                    }
                     
                     Picker("Date Format", selection: $selectedDateFormat) {
                         ForEach(dateFormats, id: \.self) { format in
