@@ -6,7 +6,7 @@
 //
 import SwiftUI
 /// `GraphView` displays a fincnail overview in the form of graphs and summary card
-//  I didn't do the month when we add the income or expense, we can implement this feature later on
+
 struct GraphView: View {
     @Environment(\.presentationMode) var presentationMode
    
@@ -35,6 +35,7 @@ struct GraphView: View {
                     Text("Financial Overview")
                         .font(.largeTitle)
                         .fontWeight(.bold)
+                        .padding()
 
 
                     // Month Picker
@@ -147,7 +148,17 @@ struct PieChartView: View {
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView().environmentObject(TransactionViewModel())
+        
+        Group {
+            GraphView().environmentObject(TransactionViewModel())
+                .preferredColorScheme(.light)
+                .previewDisplayName("Light Mode")
+            
+            GraphView()
+                .environmentObject(TransactionViewModel())
+                .preferredColorScheme(.dark)
+                .previewDisplayName("Dark Mode")
+        }
     }
 }
 
