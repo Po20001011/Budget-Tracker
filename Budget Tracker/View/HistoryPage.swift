@@ -169,8 +169,17 @@ struct HistoryView: View {
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         let vm = TransactionViewModel()
-        return HistoryView()
-            .environmentObject(vm)
+        Group {
+            HistoryView()
+                .environmentObject(vm)
+                .preferredColorScheme(.light)
+                .previewDisplayName("Light Mode")
+            HistoryView()
+                .environmentObject(vm)
+                .preferredColorScheme(.dark)
+                .previewDisplayName("Dark Mode")
+            
+        }
     }
 }
 

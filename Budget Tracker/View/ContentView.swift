@@ -25,7 +25,7 @@ struct HomePageView: View {
     @State private var showHistoryView: Bool = false
     @State private var showGraphView: Bool = false
     @State private var showSettingsView: Bool = false
- 
+    
     // MARK: - Body
     
     var body: some View {
@@ -71,7 +71,7 @@ struct HomePageView: View {
                     .background(Color.white)
                     .cornerRadius(10)
                     .shadow(radius: 5)
-
+                    
                 }
                 .padding()
             }
@@ -89,15 +89,22 @@ struct HomePageView: View {
             
         }
         .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue.opacity(0.3)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all).frame(width: UIScreen.main.bounds.width))
-     
-
+        
+        
     }
 }
 
- // MARK: - Preview
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView().environmentObject(TransactionViewModel())
+        Group {
+            HomePageView().environmentObject(TransactionViewModel())
+                .preferredColorScheme(.light)
+                .previewDisplayName("Light Mode")
+            HomePageView().environmentObject(TransactionViewModel())
+                .preferredColorScheme(.dark)
+                .previewDisplayName("Dark Mode")
+        }
     }
 }
 
