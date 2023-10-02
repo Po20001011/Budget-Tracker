@@ -3,7 +3,7 @@
 //  Budget Tracker
 //
 //  Created by Wang Po on 15/8/2023.
-//
+// This is a test
 
 import SwiftUI
 
@@ -85,6 +85,7 @@ struct SettingsView: View {
                 .frame(width: 50, height: 50)
                 .foregroundColor(.black)
             Text("User Name")
+                .foregroundColor(Color.black)
                 .font(.title2)
                 .fontWeight(.bold)
         }
@@ -95,6 +96,7 @@ struct SettingsView: View {
     var generalSettingsSection: some View {
         VStack(alignment: .leading, spacing: 15) {
             Text("General")
+                .foregroundColor(Color.black)
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.leading)
@@ -173,11 +175,13 @@ struct SettingsView: View {
     var notificationSettingsSection: some View {
         VStack(alignment: .leading, spacing: 15) {
             Text("Notification Settings")
+                .foregroundColor(Color.black)
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.leading)
             
             Toggle("Enable Notifications", isOn: $notificationsEnabled)
+                .foregroundColor(Color.black)
                 .padding()
         }
         .padding()

@@ -33,7 +33,12 @@ class NetworkManager: ObservableObject {
     
     func fetchCurrencyData(completion: @escaping (Result<CurrencyData, Error>) -> ()) {
 //        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/5ab0432f8215601ffb47b189/latest/AUD") else { return }
-        guard let url = URL(string: "https://api.ratesexchange.eu/client/latest?apikey=b4cf7289-e372-44a1-84e8-f0f36e5ce6af") else { return }
+        
+        guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else { return }
+        guard let apiKey: String = infoDictionary["ApiKey"] as? String else { return }
+        print("Here's your api key value -> \(apiKey)")
+        
+        guard let url = URL(string: "https://api.ratesexchange.eu/client/latest?apikey=" + apiKey) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
