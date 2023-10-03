@@ -57,6 +57,7 @@ struct HomePageView: View {
                         if vm.transactions.isEmpty {
                             Text("Transactions not Found")
                                 .frame(width: 200, height: 40, alignment: .center)
+                                
                         } else {
                             
                             ForEach(vm.transactions) { transaction in
@@ -68,11 +69,14 @@ struct HomePageView: View {
                         
                         
                     }
+                    .foregroundColor(Color.black)
+//                    .background(Color("CustomLightGrey"))
                     .background(Color.white)
                     .cornerRadius(10)
-                    .shadow(radius: 5)
+                    
                     
                 }
+                .shadow(radius: 5)
                 .padding()
             }
             
