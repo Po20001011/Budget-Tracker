@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		373BB9D42AC97DEF0026E3FB /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 373BB9D02AC95FC40026E3FB /* Config.xcconfig */; };
 		3748470A2AC3FE9700142E93 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374847092AC3FE9700142E93 /* CurrencyData.swift */; };
 		3748470C2AC3FEBC00142E93 /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748470B2AC3FEBC00142E93 /* ExchangeRates.swift */; };
 		3748470E2AC3FF3900142E93 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748470D2AC3FF3900142E93 /* NetworkManager.swift */; };
@@ -31,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		373BB9D02AC95FC40026E3FB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		373BB9D12AC9644D0026E3FB /* API.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
 		374847092AC3FE9700142E93 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		3748470B2AC3FEBC00142E93 /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				373BB9D12AC9644D0026E3FB /* API.plist */,
-				373BB9D02AC95FC40026E3FB /* Config.xcconfig */,
 				CDC8D5592A8B3656000E92F1 /* Models */,
 				CDC8D4D32A8504F6000E92F1 /* Budget Tracker */,
 				CDC8D4D22A8504F6000E92F1 /* Products */,
@@ -227,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC8D4DC2A8504F9000E92F1 /* Preview Assets.xcassets in Resources */,
-				373BB9D42AC97DEF0026E3FB /* Config.xcconfig in Resources */,
 				CDC8D4D92A8504F9000E92F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
