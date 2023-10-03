@@ -94,15 +94,15 @@ struct GraphView: View {
 //            }
                 
            
-            .toolbar { // Updated to customize navigation bar title
-                ToolbarItem(placement: .principal) {
-                    Text("Graph")
-                        .font(.title) // Increased font size
-                        .fontWeight(.bold)
-                }
-                
-                
-            }
+//            .toolbar { // Updated to customize navigation bar title
+//                ToolbarItem(placement: .principal) {
+//                   // Text("Graph")
+//                        .font(.title) // Increased font size
+//                        .fontWeight(.bold)
+//                }
+//
+//
+//            }
         }
             .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
     }
