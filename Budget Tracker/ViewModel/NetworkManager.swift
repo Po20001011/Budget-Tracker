@@ -16,7 +16,7 @@ class NetworkManager: ObservableObject {
         fetchCurrencyData { (currency) in
             switch currency {
             case .success(let prices):
-                // Filter and append only USD, GBP, and EUR
+                // Filter and append only USD, EUR, GDP, JPY, CNY
                 let filteredRates = prices.rates.filter { ["USD", "EUR", "GBP", "JPY", "CNY"].contains($0.key) }
                 
                 DispatchQueue.main.async {
@@ -32,13 +32,16 @@ class NetworkManager: ObservableObject {
     }
     
     func fetchCurrencyData(completion: @escaping (Result<CurrencyData, Error>) -> ()) {
+//        This is a different API provider that ran out - keeping it here for reference which allowed for a base rate for AUD
 //        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/5ab0432f8215601ffb47b189/latest/AUD") else { return }
         
         guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else { return }
-        guard let apiKey: String = infoDictionary["ApiKey"] as? String else { return }
-        print("Here's your api key value -> \(apiKey)")
+        guard let mySecretApiKey: String = infoDictionary["MySecretApiKey"] as? String else { return }
         
-        guard let url = URL(string: "https://api.ratesexchange.eu/client/latest?apikey=" + apiKey) else { return }
+//        Used the line below to test is the API key was working
+//        print("Here's your api key value -> \(mySecretApiKey)")
+        
+        guard let url = URL(string: "https://api.ratesexchange.eu/client/latest?apikey=\(mySecretApiKey)") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
