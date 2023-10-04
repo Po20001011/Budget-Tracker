@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Property List.plist
+   Budget Tracker
+
+   Created by Matthew Howatson on 4/10/2023.
+   Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>MySecretApiKey</key>
+        <string>$(MY_SECRET_API_KEY)</string>
+    </dict>
+</plist>
