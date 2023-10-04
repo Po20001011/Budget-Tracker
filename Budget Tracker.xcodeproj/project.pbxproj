@@ -30,7 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		373BB9D12AC9644D0026E3FB /* API.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
+		372753E22ACD2FAE005CA0F4 /* Budget-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Budget-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
+		372753E32ACD2FED005CA0F4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		374847092AC3FE9700142E93 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		3748470B2AC3FEBC00142E93 /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		3748470D2AC3FF3900142E93 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -120,7 +121,7 @@
 		CDC8D4C82A8504F6000E92F1 = {
 			isa = PBXGroup;
 			children = (
-				373BB9D12AC9644D0026E3FB /* API.plist */,
+				372753E32ACD2FED005CA0F4 /* Config.xcconfig */,
 				CDC8D5592A8B3656000E92F1 /* Models */,
 				CDC8D4D32A8504F6000E92F1 /* Budget Tracker */,
 				CDC8D4D22A8504F6000E92F1 /* Products */,
@@ -138,6 +139,7 @@
 		CDC8D4D32A8504F6000E92F1 /* Budget Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				372753E22ACD2FAE005CA0F4 /* Budget-Tracker-Info.plist */,
 				CD4AA2092ABDB40A004A3203 /* ViewModel */,
 				CD4AA2082ABDB3E1004A3203 /* View */,
 				CD4AA2052ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld */,
@@ -261,6 +263,7 @@
 /* Begin XCBuildConfiguration section */
 		CDC8D4DD2A8504F9000E92F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372753E32ACD2FED005CA0F4 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -321,6 +324,7 @@
 		};
 		CDC8D4DE2A8504F9000E92F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372753E32ACD2FED005CA0F4 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -375,6 +379,7 @@
 		};
 		CDC8D4E02A8504F9000E92F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372753E32ACD2FED005CA0F4 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +389,7 @@
 				DEVELOPMENT_TEAM = AV458T9AZ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Budget-Tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,6 +410,7 @@
 		};
 		CDC8D4E12A8504F9000E92F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372753E32ACD2FED005CA0F4 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -413,6 +420,7 @@
 				DEVELOPMENT_TEAM = AV458T9AZ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Budget-Tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -236,5 +236,3 @@ struct SettingsView_Previews: PreviewProvider {
         
     }
 }
-
-
