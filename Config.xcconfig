@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  Budget Tracker
+//
+//  Created by Matthew Howatson on 4/10/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// MY_SECRET_API_KEY = mysupersecretapikeyvaluehere
+MY_SECRET_API_KEY = b4cf7289-e372-44a1-84e8-f0f36e5ce6af
