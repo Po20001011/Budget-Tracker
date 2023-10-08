@@ -159,8 +159,9 @@ struct HistoryView: View {
         for index in indices {
             // Use the index to access the corresponding item in your collection
             let itemToDelete = vm.transactions[index]
-            vm.didRemoveTransactions(transaction: itemToDelete)
-           
+            withAnimation(.linear) {
+                vm.didRemoveTransactions(transaction: itemToDelete)
+            }
         }
 
     }

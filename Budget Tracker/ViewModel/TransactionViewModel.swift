@@ -93,6 +93,7 @@ extension Date {
     
     func toString(format:String) -> String {
         let df = DateFormatter()
+        df.locale = Locale(identifier: "en_AU") // Australian locale
         df.dateFormat = format
         return df.string(from: self)
     }

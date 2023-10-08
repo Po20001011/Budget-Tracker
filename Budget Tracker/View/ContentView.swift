@@ -55,7 +55,7 @@ struct HomePageView: View {
                     // Transactions List Section
                     VStack(alignment: .leading) {
                         if vm.transactions.isEmpty {
-                            Text("Transactions not Found")
+                            Text("No record Press + to add")
                                 .frame(width: 200, height: 40, alignment: .center)
                                 
                         } else {
