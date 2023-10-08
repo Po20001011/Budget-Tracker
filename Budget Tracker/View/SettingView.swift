@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @FocusState var isInputActive: Bool
     @ObservedObject var networkManager = NetworkManager()
     @State private var amount: String = ""
     @State private var pickerSelection: Int = 0
@@ -127,6 +127,16 @@ struct SettingsView: View {
                         TextField("Amount", text: $amount)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .keyboardType(.decimalPad)
+                            .focused($isInputActive)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .keyboard) {
+                                    Spacer()
+                                    
+                                    Button("Done") {
+                                        isInputActive = false
+                                    }
+                                }
+                            }
 
                         Text("\(total, specifier: "%.2f")")
 

@@ -20,7 +20,7 @@ class CoreDataManager {
     
 }
 
-// MARk: - Transaction Management
+// MARK: - Transaction Management
 
 extension CoreDataManager {
     /// Fetches all transactions sorted by date in descenging order

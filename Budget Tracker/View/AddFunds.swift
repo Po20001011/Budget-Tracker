@@ -18,6 +18,8 @@ struct AddFundsView: View {
     @State private var isIncomeType: IncomeType = .income
     @State private var selectedType: TransactionsType = .salary
     
+    @State private var showPopUp = false
+    
     /// List of available transaction types
     let transactionTypes: [String] = ["Salary", "Gift", "Groceries", "Dining Out", "Other"]
     
@@ -65,7 +67,7 @@ struct AddFundsView: View {
                 .keyboardType(.decimalPad)
                 .padding(20)
                 .font(.title)
-                .background(Color.white)
+                .background(Color(.systemBackground)) // change to systemBackground for viewing in Dark mode
                 .cornerRadius(10)
                 .shadow(radius: 5)
             
@@ -82,6 +84,7 @@ struct AddFundsView: View {
                     vm.didAddTransaction(amountt: amount, detail: description, isIncome: isIncomeType == .income, type: selectedType)
                     self.amount = ""
                     description = ""
+                    showPopUp.toggle()
                     // Calls the didAddTransaction method from the TransactionViewModel to add a new transaction with the provided details
                 }
                 
@@ -113,6 +116,8 @@ struct AddFundsView: View {
             }
             
             
+        }.overlay {
+            AppPopView(isShowingPopup: $showPopUp)
         }
         
     }

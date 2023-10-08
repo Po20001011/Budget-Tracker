@@ -21,7 +21,7 @@ struct TransactionRow: View {
                 Text(transaction.detail ?? "aa")
                     .font(.headline)
                     .foregroundColor(.primary)
-                Text(transaction.formattedDate)
+                Text(transaction.date?.toString(format: "dd/MM/yyyy") ?? "")
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
