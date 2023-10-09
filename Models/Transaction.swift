@@ -15,11 +15,15 @@ struct Transaction: Identifiable {
     let description: String
     let amount: Double
     let type: TransactionType
-
+    
     enum TransactionType {
         case income
         case expense
     }
+    
+
+
+
 }
 
 /// Enum representing types of transactions in the budget tracker.
@@ -44,6 +48,7 @@ enum TransactionsType:Int16,CaseIterable {
         case .other:
             return "Other"
         }
+        
     }
 }
 

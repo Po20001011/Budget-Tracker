@@ -27,7 +27,7 @@ struct HistoryView: View {
         case "Expense":
             return vm.expense
         default:
-            return vm.income + vm.expense
+            return vm.income - vm.expense
         }
     }
     /// Filters transactions based on the selected filter
