@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372022912AD40CBB0041052A /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372022902AD40CBB0041052A /* Color+Ext.swift */; };
 		3748470A2AC3FE9700142E93 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374847092AC3FE9700142E93 /* CurrencyData.swift */; };
 		3748470C2AC3FEBC00142E93 /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748470B2AC3FEBC00142E93 /* ExchangeRates.swift */; };
 		3748470E2AC3FF3900142E93 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748470D2AC3FF3900142E93 /* NetworkManager.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372022902AD40CBB0041052A /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		372753E42ACD3E88005CA0F4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		372753E52ACD4939005CA0F4 /* Budget-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Budget-Tracker-Info.plist"; sourceTree = "<group>"; };
 		374847092AC3FE9700142E93 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				CDC8D4E42A850585000E92F1 /* Transaction.swift */,
 				374847092AC3FE9700142E93 /* CurrencyData.swift */,
 				3748470B2AC3FEBC00142E93 /* ExchangeRates.swift */,
+				372022902AD40CBB0041052A /* Color+Ext.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				3748470C2AC3FEBC00142E93 /* ExchangeRates.swift in Sources */,
 				CDC8D4E92A8505E6000E92F1 /* HistoryPage.swift in Sources */,
 				CD4AA2182ABDB9CA004A3203 /* AppTabView.swift in Sources */,
+				372022912AD40CBB0041052A /* Color+Ext.swift in Sources */,
 				CDC8D55D2A8B3B09000E92F1 /* SettingView.swift in Sources */,
 				CDC8D4E72A8505A6000E92F1 /* AddFunds.swift in Sources */,
 				CD4AA2142ABDB6F9004A3203 /* CoreDataManager.swift in Sources */,

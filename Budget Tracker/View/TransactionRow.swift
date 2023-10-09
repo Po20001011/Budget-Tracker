@@ -20,7 +20,7 @@ struct TransactionRow: View {
             VStack(alignment: .leading) {
                 Text(transaction.detail ?? "aa")
                     .font(.headline)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.black)
                 Text(transaction.date?.toString(format: "dd/MM/yyyy") ?? "")
                     .font(.subheadline)
                     .foregroundColor(.gray)

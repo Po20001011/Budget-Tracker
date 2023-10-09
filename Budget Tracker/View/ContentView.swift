@@ -28,6 +28,8 @@ struct HomePageView: View {
     
     // MARK: - Body
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack {
             
@@ -35,19 +37,19 @@ struct HomePageView: View {
                 // Current Balance Section
                 ZStack {
                     Circle()
-                        .fill(RadialGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), center: .center, startRadius: 5, endRadius: 300))
+                        .fill(RadialGradient(gradient: Gradient(colors: [Color("MidBlueToYellow"), Color("DarkBlueToBeige")]), center: .center, startRadius: 5, endRadius: 300))
                         .frame(width: 180, height: 180)
                         .shadow(radius: 10)
                     
                     VStack {
                         Text("Current Balance")
                             .font(.headline)
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
                         // Display the current balance fetched from the view model
                         Text("$\(vm.currentBalance, specifier: "%.2f")")
                             .font(.largeTitle)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
                     }
                 }
                 
@@ -57,25 +59,22 @@ struct HomePageView: View {
                         if vm.transactions.isEmpty {
                             Text("No record Press + to add")
                                 .frame(width: 200, height: 40, alignment: .center)
-                                
+
                         } else {
                             
                             ForEach(vm.transactions) { transaction in
                                 TransactionRow(transaction: transaction)
+                                    
                             }
-                            
-                            
                         }
-                        
-                        
+
                     }
-                    .foregroundColor(Color.black)
-//                    .background(Color("CustomLightGrey"))
+
                     .background(Color.white)
                     .cornerRadius(10)
-                    
-                    
+ 
                 }
+                
                 .shadow(radius: 5)
                 .padding()
             }
@@ -87,14 +86,12 @@ struct HomePageView: View {
                         .font(.title) // Increased font size
                         .fontWeight(.bold)
                 }
-                
-                
+ 
             }
             
         }
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue.opacity(0.3)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all).frame(width: UIScreen.main.bounds.width))
-        
-        
+        .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all).frame(width: UIScreen.main.bounds.width))
+
     }
 }
 
@@ -102,13 +99,17 @@ struct HomePageView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomePageView().environmentObject(TransactionViewModel())
+            HomePageView()
+                .environmentObject(TransactionViewModel())
                 .preferredColorScheme(.light)
                 .previewDisplayName("Light Mode")
-            HomePageView().environmentObject(TransactionViewModel())
+
+            HomePageView()
+                .environmentObject(TransactionViewModel())
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark Mode")
         }
     }
 }
+
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @FocusState var isInputActive: Bool
+    
     @ObservedObject var networkManager = NetworkManager()
     @State private var amount: String = ""
     @State private var pickerSelection: Int = 0
@@ -36,6 +36,8 @@ struct SettingsView: View {
         return totalAmount
     }
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack(spacing: 20) {
 
@@ -46,14 +48,13 @@ struct SettingsView: View {
             Spacer()
         }
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .toolbar { // Updated to customize navigation bar title
             ToolbarItem(placement: .principal) {
                 Text("Settings")
                     .font(.title) // Increased font size
                     .fontWeight(.bold)
             }
-            
             
         }
     }
@@ -83,9 +84,9 @@ struct SettingsView: View {
             Image(systemName: "person.circle.fill")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
             Text("User Name")
-                .foregroundColor(Color.black)
+                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                 .font(.title2)
                 .fontWeight(.bold)
         }
@@ -127,16 +128,7 @@ struct SettingsView: View {
                         TextField("Amount", text: $amount)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .keyboardType(.decimalPad)
-                            .focused($isInputActive)
-                            .toolbar {
-                                ToolbarItemGroup(placement: .keyboard) {
-                                    Spacer()
-                                    
-                                    Button("Done") {
-                                        isInputActive = false
-                                    }
-                                }
-                            }
+                            
 
                         Text("\(total, specifier: "%.2f")")
 
