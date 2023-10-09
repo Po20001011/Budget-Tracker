@@ -3,7 +3,7 @@
 //  Budget Tracker
 //
 //  Created by Wang Po on 15/8/2023.
-// This is a test
+
 
 import SwiftUI
 
