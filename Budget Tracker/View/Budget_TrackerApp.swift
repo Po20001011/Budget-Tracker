@@ -12,7 +12,7 @@ struct YourApp: App {
     var body: some Scene {
         WindowGroup {
            AppTabView()
-                .preferredColorScheme(.light)
+                
         }
     }
 }

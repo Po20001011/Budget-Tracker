@@ -50,13 +50,17 @@ struct HistoryView: View {
         }
     }
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         //        NavigationView {
         VStack {
             // Search Bar
-            TextField("Search Transactions", text: $searchText)
+//            TextField("Search Transactions", text: $searchText)
+            TextField("", text: $searchText, prompt: Text("Search Transactions").foregroundColor(.black.opacity(0.4)))
                 .padding()
                 .background(Color.white)
+                .foregroundColor(.black)
                 .cornerRadius(10)
                 .padding(.horizontal)
             
@@ -140,7 +144,7 @@ struct HistoryView: View {
             Spacer()
         }
         
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { // Updated to customize navigation bar title
             ToolbarItem(placement: .principal) {
@@ -159,9 +163,8 @@ struct HistoryView: View {
         for index in indices {
             // Use the index to access the corresponding item in your collection
             let itemToDelete = vm.transactions[index]
-            withAnimation(.linear) {
-                vm.didRemoveTransactions(transaction: itemToDelete)
-            }
+            vm.didRemoveTransactions(transaction: itemToDelete)
+           
         }
 
     }

@@ -27,6 +27,8 @@ struct GraphView: View {
         return transactions.filter({ !$0.isIncome }).map({$0.amount}).reduce(0, +)
     }
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
 
             ScrollView {
@@ -58,7 +60,9 @@ struct GraphView: View {
                     // Summary Cards
                     HStack {
                         SummaryCard(title: "Total Income", value: String(format: "$%.2f", income))
+                            .foregroundColor(Color.black)
                         SummaryCard(title: "Total Expense", value: String(format: "$%.2f", expense))
+                            .foregroundColor(Color.black)
                     }
                     
                     // Pie Chart Section
@@ -71,21 +75,24 @@ struct GraphView: View {
                             .frame(height: 400)
                         
                         ZStack {
-                            PieChartView(value: income / (income + expense), color: Color.blue)
-                            PieChartView(value: expense / (income + expense), color: Color.orange, startAngle: .degrees(income / (income + expense) * 360))
+                            PieChartView(value: income / (income + expense), color: Color.blueCustom)
+                            PieChartView(value: expense / (income + expense), color: Color.yellowCustom, startAngle: .degrees(income / (income + expense) * 360))
 
                             
                             
                             VStack {
                                 Text("Balance")
+                                    .foregroundColor(Color.black)
                                     .font(.headline)
                                 Text(String(format: "$%.2f", income - expense))
+                                    .foregroundColor(Color.black)
                                     .font(.title2)
                                     .fontWeight(.bold)
                             }
                             .frame(width: 150, height: 150)
                             .background(Color.white)
                             .cornerRadius(75)
+                            
                         }
                         .frame(height: 300) // Bigger pie chart
                     }
@@ -96,7 +103,7 @@ struct GraphView: View {
            
 
         }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -153,4 +160,3 @@ struct GraphView_Previews: PreviewProvider {
         }
     }
 }
-

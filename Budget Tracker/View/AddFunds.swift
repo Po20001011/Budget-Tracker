@@ -18,12 +18,12 @@ struct AddFundsView: View {
     @State private var isIncomeType: IncomeType = .income
     @State private var selectedType: TransactionsType = .salary
     
-    @State private var showPopUp = false
-    
     /// List of available transaction types
     let transactionTypes: [String] = ["Salary", "Gift", "Groceries", "Dining Out", "Other"]
     
     // MARK: - Body
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -33,8 +33,10 @@ struct AddFundsView: View {
                 ForEach(TransactionsType.allCases, id: \.self) { type in
                     Text(type.title).tag(type.rawValue)
                         .font(.title)
+                        .foregroundColor(Color("blueCustom"))
                 }
             }
+            
             .padding(.horizontal)
             .frame(width: 180,height: 60)
             .background(Color.white)
@@ -46,36 +48,83 @@ struct AddFundsView: View {
                     Text("Income")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(isIncomeType == .income ? Color.blue : Color.gray)
-                        .foregroundColor(.white)
+                        .background(
+                        
+                            ZStack {
+                                    if isIncomeType == .income {
+                                        Color.blueCustom
+                                    } else {
+                                        Color.greyCustom
+                                    }
+
+                                    if colorScheme == .dark {
+                                        Color.lightBlueCustom
+                                    } else {
+                                        Color.blueCustom
+                                    }
+                                }
+                        
+                        )
+                        .foregroundColor(colorScheme == .dark ? .black : .white)
                         .cornerRadius(10)
+                        .fontWeight(.bold)
                 }
                 Button(action: { isIncomeType = .expense }) {
                     Text("Expense")
+                        .foregroundColor(colorScheme == .dark ? .black : .white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(isIncomeType == .expense ? Color.red : Color.gray)
-                        .foregroundColor(.white)
+//                        .background(isIncomeType == .expense ? Color.redCustom : Color.greyCustom)
+                        .background(
+                        
+                            ZStack {
+                                    if isIncomeType == .income {
+                                        Color.redCustom
+                                    } else {
+                                        Color.greyCustom
+                                    }
+
+                                    if colorScheme == .dark {
+                                        Color.beigeCustom
+                                    } else {
+                                        Color.greyCustom
+                                    }
+                                }
+                        
+                        )
                         .cornerRadius(10)
+                        .fontWeight(.bold)
                 }
             }
             .padding()
             
+            
+            ZStack(alignment: .leading) {
+                
+                
+                
+            }
+            
             Spacer().frame(height: 40)
             // Amount Section
-            TextField("Amount", text: $amount)
+            TextField("", text: $amount, prompt: Text("Amount").foregroundColor(.black.opacity(0.3)))
                 .keyboardType(.decimalPad)
                 .padding(20)
                 .font(.title)
-                .background(Color(.systemBackground)) // change to systemBackground for viewing in Dark mode
+                .background(Color.white)
+                .foregroundColor(.black)
+//                .background(colorScheme == .dark ? Color.beigeCustom : Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+             
+            
             
             // Description Section
-            TextField("Description", text: $description)
+            TextField("", text: $description, prompt: Text("Description").foregroundColor(.black.opacity(0.3)))
                 .padding(20)
                 .font(.title)
                 .background(Color.white)
+                .foregroundColor(.black)
                 .cornerRadius(10)
                 .shadow(radius: 5)
             Button(action: {
@@ -84,20 +133,20 @@ struct AddFundsView: View {
                     vm.didAddTransaction(amountt: amount, detail: description, isIncome: isIncomeType == .income, type: selectedType)
                     self.amount = ""
                     description = ""
-                    showPopUp.toggle()
                     // Calls the didAddTransaction method from the TransactionViewModel to add a new transaction with the provided details
                 }
                 
             }) {
                 Text("Submit")
                     .font(.headline)
-                    .fontWeight(.regular)
-                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                     .multilineTextAlignment(.center)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color(red: 0.6, green: 1.0, blue: 0.6))
+                    .background(colorScheme == .dark ? Color.yellowCustom : Color.blueCustom)
                     .cornerRadius(10)
+                    
             }
             .padding()
             Spacer()
@@ -105,7 +154,7 @@ struct AddFundsView: View {
         }
         
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { // Updated to customize navigation bar title
@@ -116,8 +165,6 @@ struct AddFundsView: View {
             }
             
             
-        }.overlay {
-            AppPopView(isShowingPopup: $showPopUp)
         }
         
     }
@@ -144,5 +191,3 @@ struct AddFunds_Previews: PreviewProvider {
         }
     }
 }
-
-
