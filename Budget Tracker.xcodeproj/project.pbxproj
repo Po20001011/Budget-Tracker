@@ -101,15 +101,15 @@
 		CD4AA2082ABDB3E1004A3203 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD23497E2ACF803800088EB1 /* AppPopView.swift */,
 				CDC8D4E62A8505A6000E92F1 /* AddFunds.swift */,
+				CD23497E2ACF803800088EB1 /* AppPopView.swift */,
 				CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */,
 				CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */,
-				CDC8D4D62A8504F6000E92F1 /* ContentView.swift */,
+				CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */,
 				CDC8D4EA2A88E576000E92F1 /* GraphView.swift */,
 				CDC8D4E82A8505E6000E92F1 /* HistoryPage.swift */,
-				CDC8D55C2A8B3B09000E92F1 /* SettingView.swift */,
 				CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */,
+				CDC8D4D62A8504F6000E92F1 /* ContentView.swift */,
 				CD4AA20C2ABDB60D004A3203 /* CoreData */,
 			);
 			path = View;
@@ -237,6 +237,8 @@
 			dependencies = (
 			);
 			name = "Budget Tracker";
+			packageProductDependencies = (
+			);
 			productName = "Budget Tracker";
 			productReference = CDC8D4D12A8504F6000E92F1 /* Budget Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +271,8 @@
 				Base,
 			);
 			mainGroup = CDC8D4C82A8504F6000E92F1;
+			packageReferences = (
+			);
 			productRefGroup = CDC8D4D22A8504F6000E92F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

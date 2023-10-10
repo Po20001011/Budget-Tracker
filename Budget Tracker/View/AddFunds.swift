@@ -19,7 +19,9 @@ struct AddFundsView: View {
     @State private var selectedType: TransactionsType = .salary
     
     /// List of available transaction types
-    let transactionTypes: [String] = ["Salary", "Gift", "Groceries", "Dining Out", "Other"]
+    let incomeTypes: [TransactionsType] = [.salary, .bonus, .otherIncome]
+    
+    let expenseTypes: [TransactionsType] = [.groceries, .diningOut, .drinks, .otherExpense]
     
     // MARK: - Body
     
@@ -30,8 +32,8 @@ struct AddFundsView: View {
         VStack(spacing: 20) {
             
             Picker("Select Type", selection: $selectedType) {
-                ForEach(TransactionsType.allCases, id: \.self) { type in
-                    Text(type.title).tag(type.rawValue)
+                ForEach(isIncomeType == .income ? incomeTypes : expenseTypes, id: \.self) { type in
+                    Text(type.title).tag(type)
                         .font(.title)
                         .foregroundColor(Color("blueCustom"))
                 }

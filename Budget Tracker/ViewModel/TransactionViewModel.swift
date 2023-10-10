@@ -69,7 +69,7 @@ extension TransactionViewModel {
     
     /// Adds a new transaction
     func didAddTransaction(amountt:Double,detail:String,isIncome:Bool,type:TransactionsType) {
-       let transaction = manager.createTransaction(detail: detail, amount: amountt, isIncome: isIncome, type: type.rawValue)
+        let transaction = manager.createTransaction(detail: detail, amount: amountt, isIncome: isIncome, type: type.title)
         self.transactions.insert(transaction, at: 0)
         getTransactionBy()
     }

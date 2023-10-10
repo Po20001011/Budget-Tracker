@@ -59,6 +59,8 @@ struct HomePageView: View {
                         if vm.transactions.isEmpty {
                             Text("No record Press + to add")
                                 .frame(width: 200, height: 40, alignment: .center)
+                                .foregroundColor(colorScheme == .dark ? .blue : .orange) // set text color
+                                
 
                         } else {
                             

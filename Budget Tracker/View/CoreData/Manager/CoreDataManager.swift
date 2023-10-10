@@ -42,7 +42,7 @@ extension CoreDataManager {
   
     /// Creates a new transaction and  saves it to the database
     @discardableResult
-    func createTransaction(detail:String,amount:Double,isIncome:Bool,type:Int16) -> TransactionModel {
+    func createTransaction(detail: String, amount: Double, isIncome: Bool, type: String) -> TransactionModel {
         let transaction = TransactionModel(context: coreDataStack.managedContext)
         transaction.date = Date()
         transaction.amount = amount
