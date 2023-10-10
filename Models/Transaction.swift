@@ -28,24 +28,37 @@ struct Transaction: Identifiable {
 
 /// Enum representing types of transactions in the budget tracker.
 /// This helps the user categorize their income and expenses.
-enum TransactionsType:Int16,CaseIterable {
-    case salary
-    case gift
-    case groceries
-    case diningOut
-    case other
+enum TransactionsType: String,CaseIterable {
+    case salary = "Salary"
+    case bonus = "Bonus"
+    case otherIncome = "Other Income"
+    case groceries = "Groceries"
+    case diningOut = "Dining Out"
+    case drinks = "Drinks"
+    case otherExpense = "Other Expense"
+    
     
     var title:String {
         switch self {
         case .salary:
             return "Salary"
-        case .gift:
-            return "Gift"
+            
+        case .bonus:
+            return "Bonus"
+            
+        case .otherIncome:
+             return "Other Income"
+            
         case .groceries:
             return "Groceries"
+            
         case .diningOut:
             return "Dining Out"
-        case .other:
+            
+        case .drinks:
+            return "Drinks"
+            
+        case .otherExpense:
             return "Other"
         }
         

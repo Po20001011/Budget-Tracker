@@ -20,7 +20,7 @@ extension TransactionModel {
     @NSManaged public var isIncome: Bool
     @NSManaged public var amount: Double
     @NSManaged public var detail: String?
-    @NSManaged public var type: Int16
+    @NSManaged public var type: String?
     
 }
 /// Add Identifiable conformance and computed properties
@@ -34,7 +34,7 @@ extension TransactionModel : Identifiable {
     }
     
     var transType:TransactionsType {
-        return TransactionsType(rawValue: type) ?? .salary
+        return TransactionsType(rawValue: type ?? "") ?? .salary
     }
     
     var monthYear: String {
