@@ -9,4 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // MY_SECRET_API_KEY = mysupersecretapikeyvaluehere
-MY_SECRET_API_KEY = b4cf7289-e372-44a1-84e8-f0f36e5ce6af
+// MY_SECRET_API_KEY = b4cf7289-e372-44a1-84e8-f0f36e5ce6af (This one expired way too quickly)
+MY_SECRET_API_KEY = 922949eab8e2cc40931eb0ce

@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var networkManager = NetworkManager()
+    @StateObject var networkManager = NetworkManager()
     @State private var amount: String = ""
     @State private var pickerSelection: Int = 0
     
@@ -56,8 +56,12 @@ struct SettingsView: View {
                     .fontWeight(.bold)
             }
             
+        } .onAppear {
+            networkManager.initilizeCurrencyData()
         }
     }
+    
+    
     
     // MARK: - Navigation Bar
     var navigationBar: some View {
