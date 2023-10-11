@@ -8,5 +8,5 @@
 import Foundation
 
 struct CurrencyData: Codable {
-    let rates : [String: Double]
+    let conversion_rates : [String: Double]
 }
