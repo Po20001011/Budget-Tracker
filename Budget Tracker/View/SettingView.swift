@@ -6,7 +6,13 @@
 
 
 import SwiftUI
-
+/// ``SettingsView`` represents the settings screen in the Budget Tracker app.
+///
+/// ## Overview
+/// The `SettingsView` provides options for configuring various app settings such as currency, notifications, and user profile.
+///
+/// ## Usage
+/// This view is typically presented from the main screen and allows the user to customise their app experience.
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -16,14 +22,13 @@ struct SettingsView: View {
     
     @State private var notificationsEnabled = false
     @State private var selectedLanguage = "English"
-//    @State private var selectedCurrency = "USD"
+
     @State private var selectedDateFormat = "MM/dd/yyyy"
     @State private var selectedStartOfWeek = "Sunday"
     @State private var selectedBudgetReset = "Monthly"
     @State private var showEmail: Bool = false
     
     let languages = ["English", "Spanish", "French", "German", "Chinese"]
-//    let currencies = ["USD", "EUR", "GBP", "JPY", "CNY"]
     let dateFormats = ["MM/dd/yyyy", "dd/MM/yyyy", "yyyy-MM-dd"]
     let startOfWeekOptions = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let budgetResetOptions = ["Weekly", "Monthly", "Yearly"]
@@ -144,11 +149,7 @@ struct SettingsView: View {
                         }
                     }
                     
-//                    Picker("Currency", selection: $selectedCurrency) {
-//                        ForEach(currencies, id: \.self) { currency in
-//                            Text(currency)
-//                        }
-//                    }
+
                     
                     Picker("Date Format", selection: $selectedDateFormat) {
                         ForEach(dateFormats, id: \.self) { format in
@@ -226,7 +227,7 @@ struct SettingsView: View {
         .shadow(radius: 5)
     }
 }
-
+/// Preview provider for ``SettingsView``
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {

@@ -7,7 +7,7 @@
 import Foundation
 
 /// `Transaction` represents a financial transaction with a data, description, amount adn type (income and expense)
-// This is an example of documentation that I will be doing in the end of project development
+
 
 struct Transaction: Identifiable {
     let id = UUID()

@@ -8,7 +8,10 @@
 import Foundation
 import CoreData
 
-/// `CoreDataStack` manages the Core Data stack setup and provides utility methods for database operations
+/// `CoreDataStack` manages the Core Data stack setup and provides utility methods for database operations.
+///
+/// This class encapsulates the Core Data stack and provides methods for saving, updating, and clearing changes in the managed object context
+
 class CoreDataStack {
     
     private let modelName: String

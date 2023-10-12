@@ -44,8 +44,8 @@ final class Budget_TrackerTests: XCTestCase {
         
         let alreadyExist = transactionViewModel.manager.getAllTransaction()
         
-        let transaction1 = transactionViewModel.manager.createTransaction(detail: "Transaction 1", amount: 50.0, isIncome: true, type: 1)
-        let transaction2 = transactionViewModel.manager.createTransaction(detail: "Transaction 2", amount: 75.0, isIncome: false, type: 2)
+        let transaction1 = transactionViewModel.manager.createTransaction(detail: "Transaction 1", amount: 50.0, isIncome: true, type: "Salary")
+        let transaction2 = transactionViewModel.manager.createTransaction(detail: "Transaction 2", amount: 75.0, isIncome: false, type: "Groceries")
   
         // Fetch all transactions
         let transactions = transactionViewModel.manager.getAllTransaction()
@@ -104,10 +104,10 @@ final class Budget_TrackerTests: XCTestCase {
     // This test verifies that the balance is calcualted correctly
     func testBalanceCalculation() {
         // Create and add sample income and expense transactions
-        transactionViewModel.manager.createTransaction(detail: "Test Income", amount: 300.0, isIncome: true, type: 0)
+        transactionViewModel.manager.createTransaction(detail: "Test Income", amount: 300.0, isIncome: true, type: "Salary")
         
         
-        transactionViewModel.manager.createTransaction(detail: "Test Expense", amount: 200.0, isIncome: false, type: 0)
+        transactionViewModel.manager.createTransaction(detail: "Test Expense", amount: 200.0, isIncome: false, type: "Groceries")
       
         transactionViewModel.manager.coreDataStack.saveContext()
         
@@ -155,9 +155,9 @@ final class Budget_TrackerTests: XCTestCase {
     func testSearchFunctionality() {
         // Create and add sample transactions
         let date = Date()
-        transactionViewModel.manager.createTransaction(detail: "Transaction XYZ", amount: 100.0, isIncome: true, type: 0)
+        transactionViewModel.manager.createTransaction(detail: "Transaction XYZ", amount: 100.0, isIncome: true, type: "Salary")
         
-        transactionViewModel.manager.createTransaction(detail: "My New Expense", amount: 100.0, isIncome: false, type: 0)
+        transactionViewModel.manager.createTransaction(detail: "My New Expense", amount: 100.0, isIncome: false, type: "Salary")
         
         // Search for transactions containing "ABC"
         transactionViewModel.selectedMonth = date.toString(format: "MMMM")
@@ -234,19 +234,19 @@ final class Budget_TrackerTests: XCTestCase {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         // Transaction 1 - January 2023
-        let transaction1 = coreDataManager.createTransaction(detail: "Transaction 1", amount: 50.0, isIncome: true, type: 1)
+        let transaction1 = coreDataManager.createTransaction(detail: "Transaction 1", amount: 50.0, isIncome: true, type: "Salary")
         transaction1.date = dateFormatter.date(from: "2023-01-15")
 
         // Transaction 2 - February 2023
-        let transaction2 = coreDataManager.createTransaction(detail: "Transaction 2", amount: 75.0, isIncome: false, type: 2)
+        let transaction2 = coreDataManager.createTransaction(detail: "Transaction 2", amount: 75.0, isIncome: false, type: "Groceries")
         transaction2.date = dateFormatter.date(from: "2023-02-20")
 
         // Transaction 3 - March 2023
-        let transaction3 = coreDataManager.createTransaction(detail: "Transaction 3", amount: 30.0, isIncome: true, type: 1)
+        let transaction3 = coreDataManager.createTransaction(detail: "Transaction 3", amount: 30.0, isIncome: true, type: "Salary")
         transaction3.date = dateFormatter.date(from: "2023-03-10")
 
         // Transaction 4 - February 2022
-        let transaction4 = coreDataManager.createTransaction(detail: "Transaction 4", amount: 60.0, isIncome: false, type: 2)
+        let transaction4 = coreDataManager.createTransaction(detail: "Transaction 4", amount: 60.0, isIncome: false, type: "Groceries")
         transaction4.date = dateFormatter.date(from: "2023-02-05")
 
         // Group transactions by month

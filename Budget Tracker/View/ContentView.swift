@@ -10,7 +10,7 @@ import SwiftUI
 
 /// Represents the home page view of the Budget Tracker app
 ///
-///  This view displays the current balance and a list of transactions
+///  This view displays the current balance and a list of transactions. It also provides options to navigate to different sections of the app
 struct HomePageView: View {
     
     // MARK: - Properties
@@ -98,6 +98,7 @@ struct HomePageView: View {
 }
 
 // MARK: - Preview
+/// Preview provider for ``ContentView_Previews``
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {

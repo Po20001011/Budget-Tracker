@@ -53,10 +53,8 @@ struct HistoryView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        //        NavigationView {
+        
         VStack {
-            // Search Bar
-//            TextField("Search Transactions", text: $searchText)
             TextField("", text: $searchText, prompt: Text("Search Transactions").foregroundColor(.black.opacity(0.4)))
                 .padding()
                 .background(Color.white)
@@ -85,8 +83,6 @@ struct HistoryView: View {
             .padding(.horizontal)
             
             
-            //                ScrollView {
-            // Transactions List Section
             VStack(alignment: .leading) {
                 if searchText.isEmpty {
                     if transactions.isEmpty {
@@ -132,15 +128,7 @@ struct HistoryView: View {
                 
                 
             }
-            
-//            .padding()
-            
-            //                    .background(Color.white)
-            //                    .cornerRadius(10)
-            //                    .shadow(radius: 5)
-            
-            //                }
-            //                .padding()
+                     
             Spacer()
         }
         
@@ -169,7 +157,7 @@ struct HistoryView: View {
 
     }
 }
-
+/// Preview provider for ``HistoryView``
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         let vm = TransactionViewModel()

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// ``ExchangeRate``represents a single currency exchange rate
 struct ExchangeRate: Codable {
     let currency: String
     let rate: Double
