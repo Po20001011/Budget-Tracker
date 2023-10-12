@@ -48,11 +48,14 @@ The Budget Tracker app is a comprehensive financial management tool designed to 
 - The Graph View provides a visual representation of financial data over time, we also can select the specifc month of the year
   
 ## Dark Mode and Light Mode Support
-Our application supports both Dark Mode and Light Mode, providing an optimized viewing experience regardless of the system setting, Tge color schemes for both modes have been carefully selected to ensure readability and visual comfort typing(Cmd+Shift+A) to switch
+Our application supports both Dark Mode and Light Mode, providing an optimized viewing experience regardless of the system setting, The color schemes for both modes have been carefully selected to ensure readability and visual comfort typing(Cmd+Shift+A) to switch
 - Dark Mode: Ideal for low-light environments, reducing eye strain
 - Light Mode: Perfect for well-lit conditions, enhancing text readability
 - Note: Some text might disappear in Dark mode as we are still solving that at the moment!
 
+## URl of our Miro Board
+- Here is the link to our Miro Board that share the state of our project development
+- https://miro.com/app/board/uXjVMjm4rc8=/?share_link_id=159701496333
 
 
 
