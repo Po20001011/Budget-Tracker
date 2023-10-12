@@ -39,7 +39,7 @@ extension TransactionModel : Identifiable {
     
     var monthYear: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM yyyy" // Month and year format
+        dateFormatter.dateFormat = "MMMM yyyy" 
         if let date = date {
             return dateFormatter.string(from: date)
         }

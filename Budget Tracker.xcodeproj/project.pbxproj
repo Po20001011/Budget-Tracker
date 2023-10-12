@@ -21,6 +21,7 @@
 		CD4AA2162ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2152ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift */; };
 		CD4AA2182ABDB9CA004A3203 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */; };
 		CD4AA21A2ABDBCF7004A3203 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */; };
+		CDBEC9C22AD7FEFD009346C1 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = CDBEC9C12AD7FEFD009346C1 /* Documentation.docc */; };
 		CDC8D4D52A8504F6000E92F1 /* Budget_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */; };
 		CDC8D4D72A8504F6000E92F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D62A8504F6000E92F1 /* ContentView.swift */; };
 		CDC8D4D92A8504F9000E92F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC8D4D82A8504F9000E92F1 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		CD4AA2152ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CD4AA2172ABDB9CA004A3203 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		CD4AA2192ABDBCF7004A3203 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		CDBEC9C12AD7FEFD009346C1 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		CDC8D4D12A8504F6000E92F1 /* Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC8D4D42A8504F6000E92F1 /* Budget_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget_TrackerApp.swift; sourceTree = "<group>"; };
 		CDC8D4D62A8504F6000E92F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,7 +158,6 @@
 			children = (
 				372753E52ACD4939005CA0F4 /* Budget-Tracker-Info.plist */,
 				372753E42ACD3E88005CA0F4 /* Config.xcconfig */,
-				CDC8D5592A8B3656000E92F1 /* Models */,
 				CDC8D4D32A8504F6000E92F1 /* Budget Tracker */,
 				CD2349882ACF8D6E00088EB1 /* Budget TrackerTests */,
 				CDC8D4D22A8504F6000E92F1 /* Products */,
@@ -175,6 +176,8 @@
 		CDC8D4D32A8504F6000E92F1 /* Budget Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				CDBEC9C12AD7FEFD009346C1 /* Documentation.docc */,
+				CDC8D5592A8B3656000E92F1 /* Models */,
 				CD4AA2092ABDB40A004A3203 /* ViewModel */,
 				CD4AA2082ABDB3E1004A3203 /* View */,
 				CD4AA2052ABDB299004A3203 /* BudgetTrackerModel.xcdatamodeld */,
@@ -331,6 +334,7 @@
 				CD4AA2122ABDB6DB004A3203 /* CoreDataStack.swift in Sources */,
 				CD23497F2ACF803800088EB1 /* AppPopView.swift in Sources */,
 				CD4AA2162ABDB722004A3203 /* TransactionModel+CoreDataProperties.swift in Sources */,
+				CDBEC9C22AD7FEFD009346C1 /* Documentation.docc in Sources */,
 				CDC8D4E52A850585000E92F1 /* Transaction.swift in Sources */,
 				CDC8D4EB2A88E576000E92F1 /* GraphView.swift in Sources */,
 				CD4AA20E2ABDB640004A3203 /* TransactionModel+CoreDataClass.swift in Sources */,

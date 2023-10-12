@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// `AddFundsView` provides the user interface for adding new transactions
+
 struct AddFundsView: View {
     // MARK: - Properties
     
@@ -18,9 +19,10 @@ struct AddFundsView: View {
     @State private var isIncomeType: IncomeType = .income
     @State private var selectedType: TransactionsType = .salary
     
-    /// List of available transaction types
+    /// List of available income types
     let incomeTypes: [TransactionsType] = [.salary, .bonus, .otherIncome]
     
+    /// List of avaiable expense types
     let expenseTypes: [TransactionsType] = [.groceries, .diningOut, .drinks, .otherExpense]
     
     // MARK: - Body
@@ -76,7 +78,6 @@ struct AddFundsView: View {
                         .foregroundColor(colorScheme == .dark ? .black : .white)
                         .frame(maxWidth: .infinity)
                         .padding()
-//                        .background(isIncomeType == .expense ? Color.redCustom : Color.greyCustom)
                         .background(
                         
                             ZStack {
@@ -115,7 +116,6 @@ struct AddFundsView: View {
                 .font(.title)
                 .background(Color.white)
                 .foregroundColor(.black)
-//                .background(colorScheme == .dark ? Color.beigeCustom : Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
              
@@ -159,7 +159,7 @@ struct AddFundsView: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color("BeigeToDarkBlue"), Color("YellowToMidBlue")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar { // Updated to customize navigation bar title
+        .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("New Transaction")
                     .font(.title)

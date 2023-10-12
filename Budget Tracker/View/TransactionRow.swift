@@ -8,6 +8,8 @@
 import SwiftUI
 
 /// Represents a single trsnaction row in the list
+///
+/// This view is a single row in the transaction list, displaying details like the transaction type, amount and date.
 struct TransactionRow: View {
     
     var transaction:TransactionModel

@@ -9,6 +9,9 @@ import Foundation
 import CoreData
 
 /// `CoreDataManager` is a singleton class that manages Core Data operations
+///
+///  ## OverView 
+///  The `CoreDataManager` class is responsible for managing Core Data operations such as fetching, creating , and deleting transactions
 class CoreDataManager {
     
     static let shared = CoreDataManager()

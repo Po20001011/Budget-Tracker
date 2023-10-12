@@ -94,7 +94,7 @@ struct GraphView: View {
                             .cornerRadius(75)
                             
                         }
-                        .frame(height: 300) // Bigger pie chart
+                        .frame(height: 300) 
                     }
                     .padding()
                 }
@@ -107,7 +107,7 @@ struct GraphView: View {
     }
 }
 
-// Custom view for the summary cards
+/// Custom view for the summary cards
 struct SummaryCard: View {
     var title: String
     var value: String
@@ -126,7 +126,7 @@ struct SummaryCard: View {
         .shadow(radius: 5)
     }
 }
-// Custom view for the pie chart
+/// Custom view for the pie chart
 struct PieChartView: View {
     var value: Double
     var color: Color
@@ -144,7 +144,7 @@ struct PieChartView: View {
         }
     }
 }
-
+/// Preview provider for  ``GraphView``
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         

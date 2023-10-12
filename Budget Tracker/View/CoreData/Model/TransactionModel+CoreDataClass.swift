@@ -6,6 +6,8 @@
 //
 
 /// Reprensents a transaction entity in the Core Data model
+///
+/// This class is a subclass of `NSManagedObject` and represents a single transaction entity in the Core Data model
 import Foundation
 import CoreData
 

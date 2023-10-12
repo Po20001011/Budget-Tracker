@@ -84,20 +84,17 @@ struct AppTabView: View {
         .accentColor(.blue)
         .onChange(of: selectedTab) { _ in
             withAnimation {
-                // Perform any additional animations or updates when the selected tab changes
+                
             }
         }
         .onAppear {
-            // correct the transparency bug for Tab bars
+            
             let tabBarAppearance = UITabBarAppearance()
             tabBarAppearance.configureWithOpaqueBackground()
             tabBarAppearance.backgroundColor = .white
             UITabBar.appearance().standardAppearance = tabBarAppearance
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-            // correct the transparency bug for Navigation bars
-//            let navigationBarAppearance = UINavigationBarAppearance()
-//            navigationBarAppearance.configureWithOpaqueBackground()
-//            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+            
         }
     }
     
