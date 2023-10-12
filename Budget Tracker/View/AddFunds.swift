@@ -18,6 +18,7 @@ struct AddFundsView: View {
     @State private var description: String = ""
     @State private var isIncomeType: IncomeType = .income
     @State private var selectedType: TransactionsType = .salary
+    @State private var showPopUp = false
     
     /// List of available income types
     let incomeTypes: [TransactionsType] = [.salary, .bonus, .otherIncome]
@@ -136,6 +137,9 @@ struct AddFundsView: View {
                     self.amount = ""
                     description = ""
                     // Calls the didAddTransaction method from the TransactionViewModel to add a new transaction with the provided details
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        showPopUp = true
+                    }
                 }
                 
             }) {
@@ -167,6 +171,8 @@ struct AddFundsView: View {
             }
             
             
+        }.overlay {
+            AppPopView(isShowingPopup: $showPopUp)
         }
         
     }
