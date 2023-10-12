@@ -37,7 +37,7 @@ struct AppPopView: View {
                     
                     // When use add income/expense showing transaction submitted
                     VStack {
-                        Image(systemName: "checkmark.circle.fill") // Replace with your success image
+                        Image(systemName: "checkmark.circle.fill") 
                             .font(.system(size: 30))
                             .foregroundColor(.green)
                         
