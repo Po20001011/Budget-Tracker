@@ -5,12 +5,12 @@
 //  Created by Wang Po on 6/10/2023.
 //
 
-// This is the example that i will be building for the Xcode documentation in this project
+
 import SwiftUI
-/// `AppPopView` is a SwiftUI View that displays a popup message when a transaction is submitted
-///  This view is intended to provide visual feedback to the user after they have successfully submitted a transaction
+/// `AppPopView` is a SwiftUI View that displays a popup message when a transaction is submitted.
+///  This view is intended to provide visual feedback to the user after they have successfully submitted a transaction.
 ///
-///   - Important: The popup will automatically dismiss after 1.5 seconds
+///   The popup will automatically dismiss after 1.5 seconds.
 
 
 struct AppPopView: View {

@@ -6,9 +6,10 @@
 //
 
 import Foundation
-/// ``CurrencyData`` represents the currency conversion rates fetched from an API
-/// A dictionary containing currency codes as keys and their corresponding conversion rates as values.
+/// ``CurrencyData`` represents the currency conversion rates fetched from an API.
+
     
 struct CurrencyData: Codable {
+    /// A dictionary containing currency codes as keys and their corresponding conversion rates as values.
     let conversion_rates : [String: Double]
 }
