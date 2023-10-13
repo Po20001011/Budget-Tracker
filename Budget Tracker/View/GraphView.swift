@@ -5,7 +5,7 @@
 //  Created by Wang Po on 13/8/2023.
 //
 import SwiftUI
-/// `GraphView` displays a fincnail overview in the form of graphs and summary card
+/// `GraphView` displays a financial overview in the form of graphs and summary card
 
 struct GraphView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -107,7 +107,7 @@ struct GraphView: View {
     }
 }
 
-/// Custom view for the summary cards
+/// Custom view for the Summary cards
 struct SummaryCard: View {
     var title: String
     var value: String
@@ -126,7 +126,7 @@ struct SummaryCard: View {
         .shadow(radius: 5)
     }
 }
-/// Custom view for the pie chart
+/// Custom view for the Pie Chart
 struct PieChartView: View {
     var value: Double
     var color: Color

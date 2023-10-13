@@ -6,7 +6,7 @@
 //
 import Foundation
 
-/// `Transaction` represents a financial transaction with a data, description, amount adn type (income and expense)
+/// `Transaction` represents a financial transaction with a data, description, amount and type (income and expense)
 
 
 struct Transaction: Identifiable {
@@ -27,7 +27,7 @@ struct Transaction: Identifiable {
 }
 
 /// Enum representing types of transactions in the budget tracker.
-/// This helps the user categorize their income and expenses.
+/// This helps the user categorise their income and expenses.
 enum TransactionsType: String,CaseIterable {
     case salary = "Salary"
     case bonus = "Bonus"
