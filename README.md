@@ -4,7 +4,7 @@
 
 <p align="left">
 <img width="200" height= "400" alt="Light Mode" src="https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2/assets/104077995/3bb8001a-d8ca-4b1c-b7c2-690685569d58">
-<img width="200" height = "400" alt ="Dark Mode" src="https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2/assets/104077995/163f8133-9e0f-4a66-b3bf-c541d1ce9b34">
+<img width="200" height = "400" alt ="Dark Mode" src="https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2/assets/104077995/90c2f2a2-aef4-4335-9d73-9071d1a75346">
 </p>
 
 ## Overview
