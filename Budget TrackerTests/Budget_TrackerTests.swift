@@ -186,33 +186,7 @@ final class Budget_TrackerTests: XCTestCase {
         XCTAssertTrue(transactions.contains { $0.detail == detail && $0.amount == amount && $0.isIncome == isIncome && $0.transType == type })
     }
 
-    // 8. Test Date Formatting
-    // This test verifies that the date in transactions is formatted correctly
-//    func testDateFormatting() {
-//        // Create a test transaction with today's date
-//        let detail = "Test Date Transaction"
-//        let amount: Double = 100.0
-//        let isIncome = true
-//        let type = TransactionsType.salary
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "dd-MM-yyyy"
-//        dateFormatter.locale = Locale(identifier: "en_AU")
-//        dateFormatter.timeZone = TimeZone(identifier: "Australia/Sydney")
-//
-//        let testDate = Date()  // Using today's date
-//        let testDateString = dateFormatter.string(from: testDate)  // Convert today's date to string
-//
-//        // Add the test transaction with today's date
-//        transactionViewModel.date = testDate
-//        transactionViewModel.didAddTransaction(amountt: amount, detail: detail, isIncome: isIncome, type: type)
-//
-//        // Check if the date is correctly formatted
-//        let formattedDate = transactionViewModel.transactions.first!.formattedDate
-//        print("Formatted Date in Test: \(formattedDate)")  // Debugging line
-//
-//        XCTAssertEqual(formattedDate, "10/9/23")
-//    }
+    
 
 
 

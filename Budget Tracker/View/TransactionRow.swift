@@ -30,11 +30,11 @@ struct TransactionRow: View {
             
             Spacer()
             VStack(alignment: .trailing) {
-                /// Display the amount of the transaction
+                // Display the amount of the transaction
                 Text("$\(transaction.amount, specifier: "%.2f")")
                     .font(.headline)
                     .foregroundColor(transaction.isIncome ? .green : .red)
-                /// Display the type of the transaction
+                // Display the type of the transaction
                 Text(transaction.transType.title)
                     .font(.subheadline)
                     .foregroundColor(.gray)

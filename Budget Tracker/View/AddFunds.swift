@@ -8,6 +8,8 @@
 import SwiftUI
 
 /// `AddFundsView` provides the user interface for adding new transactions
+///
+/// Provide an income and expense section allow users to select the transaction type
 
 struct AddFundsView: View {
     // MARK: - Properties
@@ -185,7 +187,7 @@ struct AddFundsView: View {
 }
 // MARK: - Preview
 
-/// Preview provider for `AddFundsView`
+/// Preview provider for ``AddFundsView``
 struct AddFunds_Previews: PreviewProvider {
     static var previews: some View {
         Group {

@@ -7,7 +7,8 @@
 
 
 import SwiftUI
-/// `AppPopView` is a SwiftUI View that displays a popup message when a transaction is submitted.
+/// ``AppPopView`` is a SwiftUI View that displays a popup message when a transaction is submitted.
+/// 
 ///  This view is intended to provide visual feedback to the user after they have successfully submitted a transaction.
 ///
 ///   The popup will automatically dismiss after 1.5 seconds.

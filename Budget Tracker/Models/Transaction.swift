@@ -27,6 +27,7 @@ struct Transaction: Identifiable {
 }
 
 /// Enum representing types of transactions in the budget tracker.
+/// 
 /// This helps the user categorise their income and expenses.
 enum TransactionsType: String,CaseIterable {
     case salary = "Salary"
