@@ -12,7 +12,7 @@ import SwiftUI
 /// The `SettingsView` provides options for configuring various app settings such as currency, notifications, and user profile.
 ///
 /// ## Usage
-/// This view is typically presented from the main screen and allows the user to customise their app experience.
+/// This view is typically presented from the main screen and allows the user to customise their app experience. We also provide a currency transaction feature allow user to check the currency conversion
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     

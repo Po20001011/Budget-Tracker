@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-/// `HistoryView` displaya a list of past transactions with search and filter options
+/// ``HistoryView`` displaya a list of past transactions with search and filter options
 struct HistoryView: View {
     
     @EnvironmentObject var vm:TransactionViewModel
@@ -16,8 +16,6 @@ struct HistoryView: View {
     @State private var selectedFilter: String = "All"
     let filterOptions: [String] = ["All", "Income", "Expense"]
     
-    // Assuming transactions are defined elsewhere and accessible here
-    //  let transactions: [Transaction]
     
     //Calculate the summary based on the selected filter
     var summary: Double {
@@ -137,7 +135,7 @@ struct HistoryView: View {
         .toolbar { // Updated to customize navigation bar title
             ToolbarItem(placement: .principal) {
                 Text("History")
-                    .font(.title) // Increased font size
+                    .font(.title) 
                     .fontWeight(.bold)
             }
             

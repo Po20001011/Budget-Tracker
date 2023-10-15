@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
-/// `NetworkManager` is a singleton class responsible for handling all network-related tasks in the Budget Tracker app.
+
+
+
+///  ``NetworkManager`` is a singleton class responsible for handling all network-related tasks in the Budget Tracker app.
 ///
 /// ## Overview
 /// The `NetworkManager` class provides methods for making API calls to fetch, create, update, and delete transactions. It uses the Singleton pattern to ensure that only one instance of the class is used throughout the app.
 ///
 /// ## Usage
-/// Use `NetworkManager.shared` to access the shared instance of the class and call its methods.
-
-
-
-/// Shared instance of `NetworkManager`
+/// Use `NetworkManager.shared` to access the shared instance of the class and call its methods
 class NetworkManager: ObservableObject {
 
     @Published var currencyCode: [String] = []

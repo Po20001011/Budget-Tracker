@@ -5,7 +5,9 @@
 //  Created by Wang Po on 13/8/2023.
 //
 import SwiftUI
-/// `GraphView` displays a financial overview in the form of graphs and summary card
+/// ``GraphView`` displays a financial overview in the form of graphs and summary card
+///
+/// Users can select specific month to view the Pie Chart
 
 struct GraphView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -22,7 +24,7 @@ struct GraphView: View {
     var income:Double {
         return transactions.filter({ $0.isIncome }).map({$0.amount}).reduce(0, +)
     }
-    
+    /// Calculated total expense for the selected month
     var expense:Double {
         return transactions.filter({ !$0.isIncome }).map({$0.amount}).reduce(0, +)
     }
