@@ -11,7 +11,7 @@
 The Budget Tracker app is a comprehensive financial management tool designed to provide real-time updates on your current balance, income, and expenses. It offers a user-friendly interface where you can easily add new transactions, categorise them, and view monthly financial summaries. The app dynamically calculates your current balance with each transaction, giving you an up-to-date view of your financial health. With features like currency conversion and expense tracking, the app aims to be a one-stop solution for all your budgeting needs. It leverages Core Data for local storage, ensuring that your data is safe and accessible even without an internet connection.
 
 ## How to Access
-- Clone repository: https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2.git
+- Clone repository: https://github.com/Po20001011/Budget-Tracker.git
 - Open the project in Xcode
 
 ### Tools Required
