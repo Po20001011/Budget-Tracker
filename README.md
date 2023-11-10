@@ -2,11 +2,6 @@
 
 # Budget-Tracker-a2
 
-<p align="left">
-<img width="200" height= "400" alt="Light Mode" src="https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2/assets/104077995/3bb8001a-d8ca-4b1c-b7c2-690685569d58">
-<img width="200" height = "400" alt ="Dark Mode" src="https://github.com/rmit-iPSE-s2-2023/a2-s3847882-2/assets/104077995/90c2f2a2-aef4-4335-9d73-9071d1a75346">
-</p>
-
 ## Overview
 The Budget Tracker app is a comprehensive financial management tool designed to provide real-time updates on your current balance, income, and expenses. It offers a user-friendly interface where you can easily add new transactions, categorise them, and view monthly financial summaries. The app dynamically calculates your current balance with each transaction, giving you an up-to-date view of your financial health. With features like currency conversion and expense tracking, the app aims to be a one-stop solution for all your budgeting needs. It leverages Core Data for local storage, ensuring that your data is safe and accessible even without an internet connection.
 
@@ -53,9 +48,7 @@ Our application supports both Dark Mode and Light Mode, providing an optimized v
 - Light Mode: Perfect for well-lit conditions, enhancing text readability
 - Note: Some text might disappear in Dark mode as we are still solving that at the moment!
 
-## URl of our Miro Board
-- Here is the link to our Miro Board that share the state of our project development
-- https://miro.com/app/board/uXjVMjm4rc8=/?share_link_id=159701496333
+
 
 
 
